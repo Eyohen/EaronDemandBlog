@@ -40,16 +40,16 @@ const BlogDetail = () => {
 <div className='max-w-[900px] mx-auto justify-center mt-9'>
  
     <div>
-    <p className='text-4xl font-bold mt-16'>{items?.title}</p>
-<p className='text-2xl font-semibold mt-6 text-gray-500 '>{items?.subtitle}</p>
-<p className='font-medium text-gray-600 mt-4'>{items?.user?.firstName},{items?.user?.lastName} {new Date(items?.date).toDateString()}</p>
+    <p className='text-4xl font-bold mt-16 mx-6 md:mx-0'>{items?.title}</p>
+<p className='text-2xl font-semibold mt-6 text-gray-500 mx-6 md:mx-0 '>{items?.subtitle}</p>
+<p className='font-medium text-gray-600 mt-4 mx-4 md:mx-0'>{items?.user?.firstName},{items?.user?.lastName} {new Date(items?.date).toDateString()}</p>
 </div>
 </div>
 
 
 
-<div className=' max-w-[900px] mx-auto mt-16'>
-<img src={spaghetti} alt='' className='object-fit w-[900px] h-[550px] rounded-xl '/>
+<div className='max-w-[900px] md:mx-auto mt-16 mx-4'>
+<img src={spaghetti} alt='' className='object-fit w-[900px] md:h-[550px] h-[300px] rounded-xl '/>
 
 <p className='text-lg text-gray-700 mt-9'>{items?.text}</p>
 {/* <p className='text-lg text-gray-700 mt-2'>Yes, its true, you dont need to ask your parents to give you money for rent, and for other expenses.</p>

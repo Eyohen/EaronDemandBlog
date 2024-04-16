@@ -6,9 +6,9 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className='mt-12'>
+    <div className='mt-12 mx-6 md:mx-0'>
 
-    <div className='flex justify-center gap-x-[90px]'>
+    <div className='md:flex justify-center gap-x-[90px]'>
 
         <div>
         <p className='font-semibold text-xl'>USA</p>
@@ -70,7 +70,7 @@ const Footer = () => {
 
         <div className='w-[1000px] h-[0.5px] bg-gray-300 mt-9 mx-auto'></div>
 
-        <div className='px-[250px] mt-9 flex justify-between'>
+        <div className='px-[6px] md:px-[250px]  mt-9 flex justify-between'>
 
     
         <p className='font-light '>© EARonDemand Inc.2024</p>

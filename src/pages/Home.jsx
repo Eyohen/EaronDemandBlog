@@ -29,21 +29,18 @@ const Home = () => {
 
 
   return (
-    <div className=''>
+    <div className='overflow-x-hidden w-full'>
         <Navbar/>
  
-          <div className='flex justify-center mt-12'>
+         
             <div className='text-center'>
-         <button className='bg-red-100 rounded-full px-12 py-4 text-xl font-semibold'>Blog</button>
+         <button className='bg-red-100 rounded-full px-12 py-4 text-xl font-semibold mt-12'>Blog</button>
          <p className='text-4xl font-semibold text-[#006D77] mt-9'>Blogs and Articles</p>
          </div>
-         </div>
 
-
-
-
-         {/* blog grid */}
-         <div className='px-64 grid grid-cols-2 justify-items-center gap-y-6 mt-16'>
+        
+         {/* post grids */}
+         <div className='px-6 md:px-64 grid  md:grid-cols-2 justify-items-center gap-y-6 mt-16'>
          {posts.map(post => (
         <Link to={`/blogdetail/${post._id}`}>
        <Postcards key={post._id} post={post}/>
@@ -51,7 +48,7 @@ const Home = () => {
          ))}
                 </div>
   
-  <div className='px-64'>
+  <div className='md:px-64 px-6'>
   <NewsLetterBar/>
   </div>
 
