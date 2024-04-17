@@ -40,7 +40,7 @@ const Home = () => {
 
         
          {/* post grids */}
-         <div className='px-6 md:px-64 grid  md:grid-cols-2 justify-items-center gap-y-6 mt-16'>
+         <div className='px-6 md:px-64 grid md:grid-cols-2 md:gap-x-4 justify-items-center gap-y-6 mt-16'>
          {posts.map(post => (
         <Link to={`/blogdetail/${post._id}`}>
        <Postcards key={post._id} post={post}/>

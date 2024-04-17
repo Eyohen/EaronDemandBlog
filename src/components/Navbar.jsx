@@ -42,8 +42,8 @@ const Navbar = () => {
         <p className='hidden md:block font-medium hover:text-red-500'>About EARonDemand</p>
 
         <div className='hidden md:block'>
-       <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  className='flex gap-x-2 items-center relative'><p className='font-medium hover:text-red-500'>Our Expertise</p><AiFillCaretDown />
-       <div className="absolute top-10">
+       <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" className='flex gap-x-2 items-center relative'><p className='font-medium hover:text-red-500'>Our Expertise</p><AiFillCaretDown />
+       <div id="dropdownHover" className="absolute top-10">
     {isDropDownVisible && <DropDown />}
     </div>
     </div> 
@@ -52,7 +52,7 @@ const Navbar = () => {
 
 <div className='hidden md:block'>
        <div onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseLeave3}  className='flex gap-x-2 items-center relative'><p className='font-medium hover:text-red-500'>Partner-Supported</p><AiFillCaretDown />
-       <div className="absolute top-10">
+       <div className="absolute top-10 cursor-pointer">
     {isDropDownVisible3 && <DropDown2 />}
     </div>
        </div> 
@@ -66,7 +66,7 @@ const Navbar = () => {
         <div onClick={handleBurger} className='relative' >
         {isDropDownVisible2 ? (<RxCross1 size={30} />
 ) : (<RxHamburgerMenu size={30}/>)}
-        <div className="absolute right-2">
+        <div className="absolute md:right-[-50px] top-9 right-[-45px] z-50">
     {isDropDownVisible2 && <SideCard />}
     </div>
     </div>
