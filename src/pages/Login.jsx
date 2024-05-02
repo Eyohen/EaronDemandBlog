@@ -39,7 +39,7 @@ const Login = () => {
 
     setIsLoading(true)
     try{
-      const res = await axios.post(URL+"/api/auth/login", {email,password})
+      const res = await axios.post(URL+"/api/login", {email,password})
 
       const {access_token} = res.data;
 
@@ -73,7 +73,7 @@ const Login = () => {
 
 
 
-        <div className='border border-red-50 rounded-lg px-[180px] py-[40px] relative'>
+        <div className='border border-red-50 rounded-lg px-4 md:px-[180px] py-[40px] relative'>
 
         <p className='font-bold text-lg text-center'>Admin Login</p>
 

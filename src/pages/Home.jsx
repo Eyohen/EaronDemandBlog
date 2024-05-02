@@ -9,28 +9,50 @@ import { URL } from '../url'
 import { Link } from 'react-router-dom';
 import NewsLetterBar from '../components/NewsLetterBar';
 import Footer from '../components/Footer';
+import ReactPaginate from 'react-paginate';
+import PaginationButtons from '../components/PaginationButtons';
+import { Helmet } from 'react-helmet-async';
+import truncate from 'html-truncate';
 
 const Home = () => {
- const [posts, setPost] = useState([])
+ const [posts, setPost] = useState([]);
+ const [loading, setLoading] = useState(true);
+ const [currentPage, setCurrentPage] = useState(0);
+ const [pageCount, setPageCount] = useState(0);
+
+// const totalPages = 13;
 
     const fetchPosts = async () => {
         try {
-          const res = await axios.get(URL + "/api/posts/");
-          setPost(res.data);
-          console.log(res.data)
-        } catch (err) {
+          const res = await axios.get(URL + `/api/list-posts?page=${currentPage + 1}`);
+
+          setPost(res.data.data);
+          setPageCount(res.data.meta.total);
+        }
+             catch (err) {
           console.log(err);
+          // setLoading(false)
         }
       };
     
       useEffect(() => {
         fetchPosts();
-      }, []);
+      }, [currentPage]);  // fetch data when currentPage changes
+
+      // const handlePageChange = (page) => {
+      //   setCurrentPage(page);
+      // };
+
+      const handlePageChange = ({ selected }) => {
+        setCurrentPage(selected); // Update the current page when pagination is clicked
+      };
+   
 
 
   return (
+ 
     <div className='overflow-x-hidden w-full'>
-        <Navbar/>
+        <Navbar/> 
  
          
             <div className='text-center'>
@@ -41,12 +63,21 @@ const Home = () => {
         
          {/* post grids */}
          <div className='px-6 md:px-64 grid md:grid-cols-2 md:gap-x-4 justify-items-center gap-y-6 mt-16'>
-         {posts.map(post => (
-        <Link to={`/blogdetail/${post._id}`}>
-       <Postcards key={post._id} post={post}/>
+         {posts?.map(post => (
+        <Link to={`/blogdetail/${post.id}`}>
+       <Postcards key={post.id} post={post}/>
        </Link>
          ))}
-                </div>
+            </div>
+            {/* <div className='flex justify-center gap-x-9 mt-9'>
+        {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
+          <button className='border border-red-300 px-4' key={page} onClick={() => handlePageChange(page)}>{page}</button>
+        ))}
+      </div> */}
+
+<div className='flex justify-center gap-x-9 mt-9'>
+      <PaginationButtons prop1={handlePageChange} prop2={pageCount} />
+      </div>
   
   <div className='md:px-64 px-6'>
   <NewsLetterBar/>
@@ -59,6 +90,7 @@ const Home = () => {
    
    
     </div>
+
   )
 }
 

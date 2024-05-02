@@ -39,11 +39,11 @@ const Navbar = () => {
 
         <img src={logo} alt='' className=' h-12 md:px-24' />
         <div className='flex gap-x-12'>
-        <p className='hidden md:block font-medium hover:text-red-500'>About EARonDemand</p>
+        <Link to={'/about'}><p className='hidden md:block font-medium hover:text-red-500'>About EARonDemand</p></Link>
 
         <div className='hidden md:block'>
-       <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" className='flex gap-x-2 items-center relative'><p className='font-medium hover:text-red-500'>Our Expertise</p><AiFillCaretDown />
-       <div id="dropdownHover" className="absolute top-10">
+       <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  className='flex gap-x-2 items-center relative'><p className='font-medium hover:text-red-500'>Our Expertise</p><AiFillCaretDown />
+       <div className="absolute top-[20px] z-50">
     {isDropDownVisible && <DropDown />}
     </div>
     </div> 
@@ -52,13 +52,13 @@ const Navbar = () => {
 
 <div className='hidden md:block'>
        <div onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseLeave3}  className='flex gap-x-2 items-center relative'><p className='font-medium hover:text-red-500'>Partner-Supported</p><AiFillCaretDown />
-       <div className="absolute top-10 cursor-pointer">
+       <div className="absolute top-[20px] cursor-pointer">
     {isDropDownVisible3 && <DropDown2 />}
     </div>
        </div> 
        </div>
 
-        <p className='hidden md:block font-medium hover:text-red-500'>Join the Newsletter</p>
+        <Link to={'https://ear.myflodesk.com/earsignup'}><p className='hidden md:block font-medium hover:text-red-500'>Join the Newsletter</p></Link>
         </div>
 
 
