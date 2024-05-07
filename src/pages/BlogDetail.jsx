@@ -36,14 +36,15 @@ const BlogDetail = () => {
     <div>
     <p className='text-4xl font-bold mt-16 mx-6 md:mx-0'>{items?.title}</p>
 <p className='text-2xl font-semibold mt-6 text-gray-500 mx-6 md:mx-0 '>{items?.subheading}</p>
-<p className='font-medium text-gray-600 mt-4 mx-4 md:mx-0'>{items?.user?.firstName},{items?.user?.lastName} {new Date(items?.created_at).toDateString()}</p>
+<p className='font-medium text-gray-600 mt-4 mx-4 md:mx-0'> {new Date(items?.created_at).toDateString()}</p>
 </div>
 </div>
 
 
 
 <div className='max-w-[900px] md:mx-auto mt-16 mx-4'>
-<img src={`https://liddly.ca/storage/${items?.image}`} alt='' className='object-fit w-[900px] md:h-[550px] h-[300px] rounded-xl '/>
+{/* <img src={`http://localhost:8000/storage/${items?.image}`} alt='' className='object-fit w-[900px] md:h-[550px] h-[300px] rounded-xl '/> */}
+<img src={`${URL}/storage/${items?.image}`} alt='' className='object-fit w-[900px] md:h-[550px] h-[300px] rounded-xl '/>
 
 {/* <p className='text-lg text-gray-700 mt-9'>{items?.description}</p> */}
 <div className='text-lg text-gray-700 mt-9' dangerouslySetInnerHTML={{ __html: items?.description}}></div>

@@ -39,7 +39,7 @@ const Navbar = () => {
 
         <img src={logo} alt='' className=' h-12 md:px-24' />
         <div className='flex gap-x-12'>
-        <Link to={'/about'}><p className='hidden md:block font-medium hover:text-red-500'>About EARonDemand</p></Link>
+        <Link to={'https://earondemand.com/about'}><p className='hidden md:block font-medium hover:text-red-500'>About EARonDemand</p></Link>
 
         <div className='hidden md:block'>
        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}  className='flex gap-x-2 items-center relative'><p className='font-medium hover:text-red-500'>Our Expertise</p><AiFillCaretDown />

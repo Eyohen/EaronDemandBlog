@@ -7,9 +7,10 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 
 const EditPost = () => {
     const postId = useParams().id;
+    // const { postId } = useParams(); 
   
     const navigate = useNavigate()
-    const [menu, setMenu] = useState([])
+  
     const [description, setDescription] = useState('')
 
     const [title, setTitle] = useState('')
@@ -29,72 +30,51 @@ const EditPost = () => {
           setTitle(res.data.data.title);
           setDescription(res.data.data.description);
           setSubHeading(res.data.data.subheading);
-          setImage(res.data.data.image);
+          
 
         //   setDessert(res.data.submenus.dessert);
         } catch (err) {
           console.log(err);
         }
       };
-    
+
+
+
+
+      const editPost = async () => {
+        setIsLoading(true);
+        try {
+          const accessToken = localStorage.getItem("access_token");
+      
+          if (!accessToken) {
+            throw new Error('Access token not found');
+          
+          }
+      
+          const res = await axios.put(
+            URL+"/api/update-post/"+postId,
+            { title, subheading, description },
+            {
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${accessToken}`
+              }
+            }
+          );
+      
+          setError(false);
+        } catch (err) {
+          setError(true);
+          console.error(err);
+        } finally {
+          setIsLoading(false);
+        }
+      };
+
+
       useEffect(() => {
         fetchPost();
       }, [postId]);
-
-
-
-     
-
-
-
-    const editPost = async (e)=>{
-      e.preventDefault()
-      const event = {
-        title,
-        subheading,
-        description
-      }
-      if(file){
-        const data=new FormData()
-        const filename=Date.now()+file.name
-        data.append("img",filename)
-        data.append("file",file)
-        event.photo=filename
-        console.log(data)
-        setIsLoading(true)
-        try{
-          const accessToken = localStorage.getItem("access_token");
-          if(!accessToken){
-                // Handle the case where the access token is not available
-            console.error('Access token not found')
-          }
-
-          const imgUpload = await axios.post(URL+"/api/upload",data, {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            }
-          })
-           
-          const res = await axios.post(URL+"/api/update-post/"+postId, event, {
-            headers: {
-              Authorization: `Bearer ${accessToken}`,
-            }
-          })
-        //   setMenu(res.data.menu)
-        //   setDescription(res.data.description)          
-          setError(false)
-          navigate("/posttable")
-        }
-        catch(err){
-          setError(true)
-          console.log(err)
-        }finally {
-          setIsLoading(false)
-          
-        }
-      }
-    }
-
 
   return (
     <div className=''>
