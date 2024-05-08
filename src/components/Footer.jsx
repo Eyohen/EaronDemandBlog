@@ -2,6 +2,7 @@ import React from 'react'
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
@@ -33,35 +34,35 @@ const Footer = () => {
         <p className='font-light tracking-wider mt-2'>Off Faramobi Ajike Street,</p>
         <p className='font-light tracking-wider mt-2'>Anthony Village, Lagos</p>
         <p className='font-light tracking-wider mt-2'>+234 913 1478 269</p>
-        <p className='font-light tracking-wider mt-2'>WhatsApp Support</p>
+        <Link to={'https://api.whatsapp.com/send?phone=2347030831279'}><p className='font-light tracking-wider mt-2'>WhatsApp Support</p></Link>
         <p className='font-light tracking-wide mt-6'>ear@earondemand.com</p>
         </div>
 
         <div>
         <p className='font-semibold text-xl'>About us</p>
-        <p className='font-light tracking-wider mt-6'>About EARonDemand</p>
-        <p className='font-light tracking-wider mt-2'>School of Founders</p>
-        <p className='font-light tracking-wider mt-2'>Join the Newsletter</p>
-        <p className='font-light tracking-wider mt-2'>Contact Us</p>
+        <Link to={'https://earondemand.com/about'}><p className='font-light tracking-wider mt-6'>About EARonDemand</p></Link>
+        <Link to={'https://bloomfounder.com/'}><p className='font-light tracking-wider mt-2'>School of Founders</p></Link>
+        <Link to={'https://ear.myflodesk.com/earsignup'}><p className='font-light tracking-wider mt-2'>Join the Newsletter</p></Link>
+        <Link to={'https://earondemand.com/contact'}><p className='font-light tracking-wider mt-2'>Contact Us</p></Link>
         </div>
 
         <div>
         <p className='font-semibold text-xl'>Services</p>
-        <p className='font-light tracking-wider mt-6'>Business Launch</p>
-        <p className='font-light tracking-wider mt-2'>Business Strategy</p>
-        <p className='font-light tracking-wider mt-2'>Funding Support</p>
-        <p className='font-light tracking-wider mt-2'>Business Plans</p>
-        <p className='font-light tracking-wider mt-2'>Bookkeeping</p>
-        <p className='font-light tracking-wider mt-2'>Pitch Decks</p>
-        <p className='font-light tracking-wider mt-2'>Documentation</p>
-        <p className='font-light tracking-wider mt-2'>Market Research</p>
-        <p className='font-light tracking-wider mt-2'>Grant Writing</p>
+        <Link to={'https://earondemand.com/business-launch'}><p className='font-light tracking-wider mt-6'>Business Launch</p></Link>
+        <Link to={'https://earondemand.com/business-strategy'}><p className='font-light tracking-wider mt-2'>Business Strategy</p></Link>
+        <Link to={'https://earondemand.com/funding-support'}><p className='font-light tracking-wider mt-2'>Funding Support</p></Link>
+        <Link to={'https://businessplans2go.com/'}><p className='font-light tracking-wider mt-2'>Business Plans</p></Link>
+        <Link to={'https://trybookkeeping.com/'}><p className='font-light tracking-wider mt-2'>Bookkeeping</p></Link>
+        <Link to={'https://onepitchdecks.com/'}><p className='font-light tracking-wider mt-2'>Pitch Decks</p></Link>
+        <Link to={'https://submissionsbyearondemand.com/'}><p className='font-light tracking-wider mt-2'>Documentation</p></Link>
+        <Link to={'https://pocketgabby.com/'}><p className='font-light tracking-wider mt-2'>Market Research</p></Link>
+        <Link to={'https://teamgranted.com/'}><p className='font-light tracking-wider mt-2'>Grant Writing</p></Link>
          </div>
 
         <div>
         <p className='font-semibold text-xl'>Useful links</p>
-        <p className='font-light tracking-wider mt-6'>Privacy Policy</p>
-        <p className='font-light tracking-wider mt-2'>Terms & Conditions</p>
+        <Link to={'https://earondemand.com/privacy'}><p className='font-light tracking-wider mt-6'>Privacy Policy</p></Link>
+        <Link to={'https://earondemand.com/terms'}><p className='font-light tracking-wider mt-2'>Terms & Conditions</p></Link>
         </div>
 
 
@@ -76,9 +77,9 @@ const Footer = () => {
         <p className='font-light '>© EARonDemand Inc.2024</p>
 
 <div className='flex gap-x-6'>
-        <FaInstagram size={25} />
-        <FaFacebook size={25}/>
-        <FaLinkedin size={25}/>
+        <Link to={'https://www.instagram.com/earondemand/'}><FaInstagram size={25} /></Link>
+        <Link to={'https://www.facebook.com/photo/?fbid=805996339928301&set=a.533417640519507/'}><FaFacebook size={25}/></Link>
+        <Link to={'https://www.linkedin.com/company/earondemand/'}><FaLinkedin size={25}/></Link>
         </div>
 
         </div>
