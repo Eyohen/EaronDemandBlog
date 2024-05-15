@@ -38,7 +38,8 @@ export function UserContextProvider({ children }) {
       });
 
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-      setUser(res.data);
+      setUser(res.data.user);
+      console.log('yam',res.data.user)
     } catch (err) {
       console.error(err);
       localStorage.removeItem("access_token");

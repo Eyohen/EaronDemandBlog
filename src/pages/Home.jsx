@@ -28,6 +28,7 @@ const Home = () => {
 
           setPost(res.data.data);
           setPageCount(res.data.meta.total);
+          console.log(res.data.data)
         }
              catch (err) {
           console.log(err);

@@ -21,7 +21,8 @@ const App = () => {
     <Route exact path="/" element={<Home/>}/>
     <Route exact path="/login" element={<Login/>}/>
     {/* <Route exact path="/dashboard" element={<Dashboard/>}/> */}
-    <Route exact path="/dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
+    {/* <Route exact path="/dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/> */}
+    <Route exact path="/dashboard" element={<Dashboard/>}/>
     <Route exact path="/blogdetail/:id" element={<BlogDetail/>}/>
     <Route exact path="/posttable" element={<PostTable/>}/>
     <Route exact path="/editpost/:id" element={<EditPost/>}/>

@@ -5,15 +5,20 @@ import { Navigate } from "react-router-dom";
 import { UserContext } from "./UserContext";
 
 export const ProtectedRoute = ({ children }) => {
-  const { user, loading } = useContext(UserContext);
+  console.log('This is protectedRoute')
+  const { user, loading} = useContext(UserContext);
+
 
   if (loading) {
     return <div>Loading...</div>; // Or any other loading indicator
   }
 
+
   if (!user) {
     return <Navigate to="/login" replace />;
-  }
+  } 
+
+
 
   return children;
 };
@@ -29,5 +34,5 @@ export const ProtectedRoute = ({ children }) => {
 //     return <Navigate to="/admin/login" replace />;
 //   }
 
-//   return children;
+//  return children;
 // };
