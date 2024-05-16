@@ -58,6 +58,8 @@ const Navbar = () => {
        </div> 
        </div>
 
+       <div className='hidden md:block font-medium hover:text-red-500'>Blog</div>
+
         <Link to={'https://ear.myflodesk.com/earsignup'}><p className='hidden md:block font-medium hover:text-red-500'>Join the Newsletter</p></Link>
         </div>
 
