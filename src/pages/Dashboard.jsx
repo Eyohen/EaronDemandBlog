@@ -31,6 +31,7 @@ const Dashboard = () => {
 
   
   const uploadPost = async () => {
+    setIsLoading(true);
 
     console.log(fileimage);
     console.log(description);
@@ -48,8 +49,11 @@ const Dashboard = () => {
     if (!accessToken) {
       // Handle the case where the access token is not available
       console.error('Access token not found')
+      return;
     }
 
+
+try{
     const res = await axios.post(URL + "/api/create-post", formData, {
       headers: {
         'Content-Type': "multipart/form-data",
@@ -63,8 +67,13 @@ const Dashboard = () => {
       setDescription("")
       setSubHeading("")
     }
-
+  } catch(error){
+    console.log(error);
+    setError(true);
+  } finally{
+    setIsLoading(false);
   }
+}
 
   const handleSubmit = async (e) => {
     e.preventDefault();
