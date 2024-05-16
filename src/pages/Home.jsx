@@ -57,6 +57,7 @@ const Home = () => {
     <Helmet>
       <title>EarOnDemand Blog | Get your stories and posts on tech solutions here</title>
       <meta name='description' content='Here we give posts about everything in tech and business'></meta>
+      </Helmet>
     <div className='overflow-x-hidden w-full'>
         <Navbar/> 
  
@@ -96,7 +97,7 @@ const Home = () => {
    
    
     </div>
-    </Helmet>
+
     </>
 
   )
