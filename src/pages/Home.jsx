@@ -56,6 +56,12 @@ const Home = () => {
     <>
    
     <div className='overflow-x-hidden w-full'>
+
+      <Helmet>
+      <title>EarOnDemand Blog| Get your stories and posts on tech solutions here</title>
+     <meta name='keywords' content='earondemand earondemand blog earondemand-blog' />
+      <meta name='description' content='Here we give posts about everything in tech and business'/>
+      </Helmet>
         <Navbar/> 
  
          
