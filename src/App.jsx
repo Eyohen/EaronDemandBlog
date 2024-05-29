@@ -8,7 +8,7 @@ import PostTable from './pages/PostTable'
 import EditPost from './pages/EditPost'
 import { UserContextProvider } from './context/UserContext';
 import { ProtectedRoute } from './context/protection'
-import { HelmetProvider } from 'react-helmet-async'
+//import { HelmetProvider } from 'react-helmet-async'
 
 
 
@@ -16,9 +16,9 @@ import { HelmetProvider } from 'react-helmet-async'
 
 
 const App = () => {
-  const helmetContext = {};
+  //const helmetContext = {};
   return (
-    <HelmetProvider  context={helmetContext}>
+  
     <UserContextProvider>
     <Routes>
     <Route exact path="/" element={<Home/>}/>
@@ -31,7 +31,7 @@ const App = () => {
     <Route exact path="/editpost/:id" element={<EditPost/>}/>
     </Routes>
     </UserContextProvider>
-      </HelmetProvider>
+   
   )
 }
 
