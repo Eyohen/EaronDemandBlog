@@ -11,7 +11,7 @@ import NewsLetterBar from '../components/NewsLetterBar';
 import Footer from '../components/Footer';
 import ReactPaginate from 'react-paginate';
 import PaginationButtons from '../components/PaginationButtons';
-import { Helmet } from 'react-helmet-async';
+//import { Helmet } from 'react-helmet-async';
 import truncate from 'html-truncate';
 //import {Helmet} from "react-helmet";
 
@@ -54,11 +54,11 @@ const Home = () => {
   return (
  
     <>
-      <Helmet>
+     {/* <Helmet>
       <title>EarOnDemand Blog | Get your stories and posts on tech solutions here</title>
       <meta name="description" content="Here we give posts about everything in tech and business"/>
        <meta name="keywords" content="earondemand earondemand blog earondemand-blog" />
-      </Helmet>
+      </Helmet>*/}
    
     <div className='overflow-x-hidden w-full'>
 
