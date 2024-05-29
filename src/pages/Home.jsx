@@ -13,7 +13,7 @@ import ReactPaginate from 'react-paginate';
 import PaginationButtons from '../components/PaginationButtons';
 // import { Helmet } from 'react-helmet-async';
 import truncate from 'html-truncate';
-//import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet";
 
 const Home = () => {
  const [posts, setPost] = useState([]);
