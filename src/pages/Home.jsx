@@ -13,7 +13,7 @@ import ReactPaginate from 'react-paginate';
 import PaginationButtons from '../components/PaginationButtons';
 // import { Helmet } from 'react-helmet-async';
 import truncate from 'html-truncate';
-import {Helmet} from "react-helmet";
+//import {Helmet} from "react-helmet";
 
 const Home = () => {
  const [posts, setPost] = useState([]);
@@ -54,11 +54,7 @@ const Home = () => {
   return (
  
     <>
-    <Helmet>
-      <title>EarOnDemand | Get your stories and posts on tech solutions here</title>
-     <meta name='keywords' content='earondemand earondemand blog earondemand-blog' />
-      <meta name='description' content='Here we give posts about everything in tech and business'/>
-      </Helmet>
+   
     <div className='overflow-x-hidden w-full'>
         <Navbar/> 
  
